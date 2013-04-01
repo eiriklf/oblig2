@@ -15,7 +15,7 @@ som er gjort, vil antall mulige kombinasjoner som AIen må prosessere være (n*n
 Jeg har i denne oppgaven valgt å bruke så få klasser som mulig, for å gjøre programstrukturen mer effektiv. Ulempen med objektorientering er at det ofte involverer flere funksjonskall. Dersom et funksjonkall er betinget (conditional branch),
 kan dette ha en signifikant innvirkning på ytelsen til programmet (fordii prosessoren ikke vet hvor en branch fører hen før if-setningen er ute av pipeline). Hvordan prosessoren håndterer dette er arkitekturavhengig, men
 det fører nesten alltid til "stalling" i en viss periode (se. http://en.wikipedia.org/wiki/Branch_predictor). Dette var også med tanke på at programmet i utgangspunktet var tenkt å bruke multithreading. Jeg vil allikevel påpeke
-at skrive og leseopperasjonene er den mest signifikante i algoritmen.
+at skrive og leseopperasjonene til cache og muligens ram er den mest signifikante i algoritmen. (Jeg antar alle data på automatic store har WB bitet i PAT satt, og på free store WT-bitet. Dette gir best preformance generelt for disse i x86. se IA-32-e software and developer manual s.542 "Methods of caching")
 
 Tanken bak algoritmen for AI er basert på mini-max prinsippet (se kilder). Jeg har imidlertidig gjort såpass mange tilpasninger og forandringer/forbedringer slik at algoritmen ikke kan kalles
 en minimax algoritme (algoritmen gjør ingen søk i nodene ved sortering, og bruker ikke nødvendigvis min og max verdier) . Algoritmen i seg selv har jeg utviklet helt på egen hånd nøyaktig for denne obligen gjennom ressoneringen som er beskrevet høyere opp. 
